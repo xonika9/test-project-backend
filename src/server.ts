@@ -12,7 +12,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 const server = app.listen(PORT, () => {
     console.log(
-        `🚀 Server is running in ${process.env.NODE_ENV} || 'development' mode on port ${PORT}`,
+        `🚀 Server is running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`,
     );
     console.log(`📚 API documentation available at http://localhost:${PORT}/api-docs`);
 });
