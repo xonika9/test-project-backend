@@ -1,21 +1,21 @@
+import './types/express/index';
 import express from 'express';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
 import authRoutes from './routes/auth.route';
 import userRoutes from './routes/user.route';
-import config from './config';
 
 const prisma = new PrismaClient();
 
 // Проверка подключения к базе данных
 async function checkDatabaseConnection() {
-  try {
-    await prisma.$connect();
-    console.log('Database connection established');
-  } catch (error) {
-    console.error('Database connection error:', error);
-    process.exit(1);
-  }
+    try {
+        await prisma.$connect();
+        console.log('Database connection established');
+    } catch (error) {
+        console.error('Database connection error:', error);
+        process.exit(1);
+    }
 }
 
 const app = express();
