@@ -20,4 +20,17 @@ model User {
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  firstName String?
+  lastName String?
+  username String?   @unique
+  bio       String?
+  avatarUrl String?
+  phoneNumber String?
+  location String?
+  language String?
+  timezone String?
+  themePreference String?
+  lastLoginAt DateTime?
+  isActive Boolean  @default(true)
+  role      String?
 }
