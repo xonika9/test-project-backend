@@ -17,8 +17,8 @@ export const getProfile = async (req: Request, res: Response) => {
                 name: true,
                 email: true,
                 createdAt: true,
-                updatedAt: true,
-            },
+                updatedAt: true
+            } as const, // Добавляем as const для корректного вывода типов
         });
 
         if (!user) {
