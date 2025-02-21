@@ -9,7 +9,11 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
     const decoded = verifyToken(token);
     req.user = { id: decoded.userId };
     next();
-  } catch (error) {
-    res.status(401).json({ message: 'Invalid token' });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(401).json({ message: error.message });
+    } else {
+      res.status(401).json({ message: 'Invalid token' });
+    }
   }
 };
