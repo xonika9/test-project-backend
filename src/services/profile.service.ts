@@ -17,7 +17,7 @@ interface UpdateProfileData {
 export const updateProfile = async (userId: number, profileData: UpdateProfileData) => {
     return prisma.user.update({
         where: { id: userId },
-         profileData, // Исправлено: данные для обновления передаются в опцию data
+         profileData, // Вот исправление: данные для обновления передаются в опцию data
         select: { // Опция select определяет, какие поля возвращать
             id: true,
             firstName: true,
