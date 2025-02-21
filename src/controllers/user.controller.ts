@@ -16,6 +16,7 @@ export const getProfile = async (req: Request, res: Response) => {
                 id: true,
                 email: true,
                 createdAt: true,
+                updatedAt: true
             },
         });
 
