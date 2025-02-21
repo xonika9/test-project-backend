@@ -16,15 +16,23 @@ const router = express.Router();
  *           schema:
  *             type: object
  *             required:
+ *               - name
  *               - email
  *               - password
  *             properties:
+ *               name:
+ *                 type: string
+ *                 minLength: 2
+ *                 maxLength: 50
+ *                 example: "Иван Иванов"
  *               email:
  *                 type: string
  *                 format: email
+ *                 example: "user@example.com"
  *               password:
  *                 type: string
  *                 minLength: 6
+ *                 example: "password123"
  *     responses:
  *       201:
  *         description: User successfully registered
@@ -35,6 +43,8 @@ const router = express.Router();
  *               properties:
  *                 id:
  *                   type: number
+ *                 name:
+ *                   type: string
  *                 email:
  *                   type: string
  *       400:
