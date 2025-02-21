@@ -1,4 +1,4 @@
-import './types/index.d.ts';
+/// <reference path="./types/index.d.ts" />
 import express from 'express';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
