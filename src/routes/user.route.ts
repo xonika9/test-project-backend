@@ -22,6 +22,8 @@ const router = express.Router();
  *               properties:
  *                 id:
  *                   type: number
+ *                 name:
+ *                   type: string
  *                 email:
  *                   type: string
  *                 createdAt:
