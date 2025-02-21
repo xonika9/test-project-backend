@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   postgres:
     image: postgres:15
@@ -17,6 +17,29 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - app-network
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+    networks:
+      - app-network
+    command: npm run dev
 
 volumes:
   postgres-data:
+
+networks:
+  app-network:
+    driver: bridge
