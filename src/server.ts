@@ -4,7 +4,7 @@ import config from './config';
 const PORT = config.port || 3000;
 
 const server = app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`🚀 Server is running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
 });
 
 // Обработка непредвиденных ошибок
@@ -14,8 +14,9 @@ process.on('unhandledRejection', (err: Error) => {
 });
 
 process.on('SIGTERM', () => {
-  console.log('SIGTERM received. Shutting down gracefully');
+  console.log('🔻 SIGTERM received. Shutting down gracefully');
   server.close(() => {
-    console.log('Process terminated');
+    console.log('✅ Process terminated');
+    process.exit(0);
   });
 });

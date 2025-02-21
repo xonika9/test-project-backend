@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 function validateEnv() {
-  const requiredVars = ['DB_USER', 'DB_PASSWORD', 'DB_NAME', 'JWT_SECRET'];
+  const requiredVars = ['DB_USER', 'DB_PASSWORD', 'DB_NAME', 'JWT_SECRET', 'DB_HOST'];
   const missingVars = requiredVars.filter(v => !process.env[v]);
 
   if (missingVars.length > 0) {
@@ -13,6 +13,7 @@ function validateEnv() {
 validateEnv();
 
 export default {
+  env: process.env.NODE_ENV || 'development',
   port: parseInt(process.env.PORT || '3000', 10),
   db: {
     user: process.env.DB_USER!,
