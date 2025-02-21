@@ -1,7 +1,5 @@
-import { User } from '@prisma/client';
-
-declare module 'express-serve-static-core' {
-  interface Request {
+declare namespace Express {
+  export interface Request {
     user?: {
       id: number;
     };

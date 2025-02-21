@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import * as userService from '../services/user.service';
 
-export const getProfile = async (req: Request, res: Response) => {
+export const getProfile = async (req: Request & { user: { id: number } }, res: Response) => {
   try {
     const userId = req.user.id;
     const user = await userService.getUserById(userId);
