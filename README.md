@@ -127,23 +127,6 @@ API будет доступен по адресу `http://localhost:3000`, а д
    npm start
    ```
 
-## Вклад в проект
-
-Мы приветствуем вклад в проект! Пожалуйста, следуйте этим шагам:
-
-1. Форкните репозиторий
-2. Создайте новую ветку (`git checkout -b feature/AmazingFeature`)
-3. Зафиксируйте изменения (`git commit -m 'Добавлен AmazingFeature'`)
-4. Отправьте изменения в ветку (`git push origin feature/AmazingFeature`)
-5. Откройте Pull Request
-
 ## Лицензия
 
 Этот проект лицензирован под MIT License - подробности в файле [LICENSE](LICENSE).
-
-## Благодарности
-
-- Prisma за отличный ORM
-- Express за веб-фреймворк
-- TypeScript за типизацию
-- Swagger за документацию API
