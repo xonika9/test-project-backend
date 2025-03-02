@@ -2,148 +2,148 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A modern Node.js backend API built with Express, TypeScript, and Prisma. Features user authentication, profile management, and API documentation.
+Современное backend-приложение на Node.js с использованием Express, TypeScript и Prisma. Включает аутентификацию пользователей, управление профилем и документацию API.
 
-## Features
+## Возможности
 
-- 🚀 TypeScript support
-- 🔐 JWT authentication
-- 📝 Swagger API documentation
-- 🐘 PostgreSQL database with Prisma ORM
-- 🐳 Docker containerization
-- 📦 Modular architecture
-- 🔄 Automatic database migrations
-- 🛡️ Environment variable validation
-- 🧪 Type-safe database queries
+- 🚀 Поддержка TypeScript
+- 🔐 Аутентификация через JWT
+- 📝 Документация API через Swagger
+- 🐘 База данных PostgreSQL с ORM Prisma
+- 🐳 Контейнеризация через Docker
+- 📦 Модульная архитектура
+- 🔄 Автоматические миграции базы данных
+- 🛡️ Валидация переменных окружения
+- 🧪 Типизированные запросы к базе данных
 
-## Tech Stack
+## Технологии
 
-- **Runtime**: Node.js
-- **Framework**: Express
-- **Language**: TypeScript
+- **Среда выполнения**: Node.js
+- **Фреймворк**: Express
+- **Язык**: TypeScript
 - **ORM**: Prisma
-- **Database**: PostgreSQL
-- **Authentication**: JWT
-- **API Docs**: Swagger UI
-- **Containerization**: Docker
+- **База данных**: PostgreSQL
+- **Аутентификация**: JWT
+- **Документация API**: Swagger UI
+- **Контейнеризация**: Docker
 
-## Getting Started
+## Начало работы
 
-### Prerequisites
+### Требования
 
 - Node.js (>=16)
 - Docker
 - PostgreSQL
 
-### Installation
+### Установка
 
-1. Clone the repository:
+1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/yourusername/test-project-backend.git
    cd test-project-backend
    ```
 
-2. Install dependencies:
+2. Установите зависимости:
    ```bash
    npm install
    ```
 
-3. Set up environment variables:
+3. Настройте переменные окружения:
    ```bash
    cp .env.example .env
    ```
-   Edit the `.env` file with your database credentials.
+   Отредактируйте файл `.env`, указав данные для подключения к базе данных.
 
-4. Start the development environment:
+4. Запустите окружение разработки:
    ```bash
    docker-compose up -d
    ```
 
-5. Run database migrations:
+5. Выполните миграции базы данных:
    ```bash
    npm run prisma:migrate
    ```
 
-6. Start the development server:
+6. Запустите сервер разработки:
    ```bash
    npm run dev
    ```
 
-The API will be running at `http://localhost:3000` and API documentation at `http://localhost:3000/api-docs`.
+API будет доступен по адресу `http://localhost:3000`, а документация API - по адресу `http://localhost:3000/api-docs`.
 
-## API Endpoints
+## Конечные точки API
 
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
+### Аутентификация
+- `POST /api/auth/register` - Регистрация нового пользователя
+- `POST /api/auth/login` - Вход пользователя
 
-### User Profile
-- `GET /api/users/profile` - Get user profile
-- `PUT /api/users/profile` - Update user profile
+### Профиль пользователя
+- `GET /api/users/profile` - Получение профиля пользователя
+- `PUT /api/users/profile` - Обновление профиля пользователя
 
-## Database Schema
+## Схема базы данных
 
-The database schema is managed using Prisma. The main models include:
+Схема базы данных управляется с помощью Prisma. Основные модели включают:
 
-- **User**: Stores user information including authentication details and profile data
+- **User**: Хранит информацию о пользователях, включая данные для аутентификации и профиля
 
-## Environment Variables
+## Переменные окружения
 
-The following environment variables are required:
+Необходимо задать следующие переменные окружения:
 
-- `DB_USER` - Database username
-- `DB_PASSWORD` - Database password
-- `DB_NAME` - Database name
-- `DB_HOST` - Database host
-- `JWT_SECRET` - Secret key for JWT tokens
-- `PORT` - Application port (default: 3000)
+- `DB_USER` - Имя пользователя базы данных
+- `DB_PASSWORD` - Пароль базы данных
+- `DB_NAME` - Имя базы данных
+- `DB_HOST` - Хост базы данных
+- `JWT_SECRET` - Секретный ключ для JWT токенов
+- `PORT` - Порт приложения (по умолчанию: 3000)
 
-## Development
+## Разработка
 
-- Run in development mode:
+- Запуск в режиме разработки:
   ```bash
   npm run dev
   ```
 
-- Generate Prisma client:
+- Генерация клиента Prisma:
   ```bash
   npm run prisma:generate
   ```
 
-- Run Prisma Studio:
+- Запуск Prisma Studio:
   ```bash
   npm run prisma:studio
   ```
 
-## Production
+## Продакшн
 
-1. Build the project:
+1. Сборка проекта:
    ```bash
    npm run build
    ```
 
-2. Start the production server:
+2. Запуск продакшн сервера:
    ```bash
    npm start
    ```
 
-## Contributing
+## Вклад в проект
 
-Contributions are welcome! Please follow these steps:
+Мы приветствуем вклад в проект! Пожалуйста, следуйте этим шагам:
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Форкните репозиторий
+2. Создайте новую ветку (`git checkout -b feature/AmazingFeature`)
+3. Зафиксируйте изменения (`git commit -m 'Добавлен AmazingFeature'`)
+4. Отправьте изменения в ветку (`git push origin feature/AmazingFeature`)
+5. Откройте Pull Request
 
-## License
+## Лицензия
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Этот проект лицензирован под MIT License - подробности в файле [LICENSE](LICENSE).
 
-## Acknowledgments
+## Благодарности
 
-- Prisma for the excellent ORM
-- Express for the web framework
-- TypeScript for type safety
-- Swagger for API documentation
+- Prisma за отличный ORM
+- Express за веб-фреймворк
+- TypeScript за типизацию
+- Swagger за документацию API
